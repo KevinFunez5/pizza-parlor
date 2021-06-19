@@ -38,6 +38,7 @@ $(document).ready(function() {
   $("#calculate").click(function() {
     const size = $("#size").val();
     const toppings = [];
-      
+      const lowerCaseVal = $(this).val().toLowerCase();
+      toppings.push(lowerCaseVal);
   })
 })
