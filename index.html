@@ -8,15 +8,20 @@
 </head>
 
 <body>
+  <h1>Kevs Pizza</h1>
     <div class="container">
         <div class="row">
             <div class="col">
                 <p>Please choose the pizza size and toppings:</p>
+                <h3>Size</h3>
                 <select class="form-select" id="size" aria-label="Default select example">
+                    <option value="tiny">TINY</option>
                     <option value="small">SMALL</option>
                     <option value="medium">MEDIUM</option>
                     <option value="large">LARGE</option>
+                    <option value="xlarge">EXTRA LARGE</option>
                 </select>
+                <h3>Toppings</h3>
                 <div class="form-check mt-3">
                     <input class="form-check-input" name="toppings[]" type="checkbox" value="pepperoni" id="pepperoni" />
                     <label class="form-check-label" for="pepperoni">Pepperoni</label>
@@ -28,6 +33,14 @@
                 <div class="form-check">
                     <input class="form-check-input" name="toppings[]" type="checkbox" value="mushrooms" id="mushrooms" />
                     <label class="form-check-label" for="mushrooms">Mushrooms</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="toppings[]" type="checkbox" value="bacon" id="bacon" />
+                    <label class="form-check-label" for="bacon">Bacon</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="toppings[]" type="checkbox" value="peppers" id="peppers" />
+                    <label class="form-check-label" for="peppers">Peppers</label>
                 </div>
             </div>
         </div>
