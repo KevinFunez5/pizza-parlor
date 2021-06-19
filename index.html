@@ -12,10 +12,10 @@
     <h1>Kevs Pizza</h1>
     <h1>Welcome to my pizzeria! Where everything is overpriced and not that great!</h1>
   </div>
+  <h1>Please choose the pizza size and toppings:</h1>
     <div class="container">
         <div class="row">
             <div class="col">
-                <p>Please choose the pizza size and toppings:</p>
                 <h3>Size</h3>
                 <select class="form-select" id="size" aria-label="Default select example">
                     <option value="tiny">TINY</option>
@@ -40,10 +40,29 @@
                 <div class="form-check">
                   <input class="form-check-input" name="toppings[]" type="checkbox" value="peppers" id="peppers" />
                   <label class="form-check-label" for="peppers">Peppers</label>
-              </div>
+                </div>
                 <div class="form-check">
                     <input class="form-check-input" name="toppings[]" type="checkbox" value="bacon" id="bacon" />
                     <label class="form-check-label" for="bacon">Bacon</label>
+                </div>
+            </div>
+            <div class="col">
+                <h3>Sides</h3>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" name="sides[]" type="checkbox" value="wings" id="wings" />
+                    <label class="form-check-label" for="wings">Wings</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="sides[]" type="checkbox" value="garlic-bread" id="garlic-bread" />
+                    <label class="form-check-label" for="garlic-bread">Garlic Bread</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="sides[]" type="checkbox" value="wings" id="wings" />
+                    <label class="form-check-label" for="wings">Wings</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" name="sides[]" type="checkbox" value="chocolate-cake" id="chocolate-cake" />
+                  <label class="form-check-label" for="chocolate-cake">Chocolate Cake</label>
                 </div>
             </div>
         </div>
