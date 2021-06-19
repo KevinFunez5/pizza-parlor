@@ -33,3 +33,11 @@ Pizza.prototype.getCosat = function() {
     }
   }
 } return cost; 
+
+$(document).ready(function() {
+  $("#calculate").click(function() {
+    const size = $("#size").val();
+    const toppings = [];
+      
+  })
+})
