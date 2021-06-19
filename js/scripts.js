@@ -20,10 +20,17 @@ const SIDES = [
   {name: "salad", price: 10.00},
   {name: "chocolate-cake", price: 10.00}
 ];
-function Pizza(size, toppings, sides) {
+const DRINKS = [
+  {name: "coca-cola", price: 5.00},
+  {name: "sprite", price: 5.00},
+  {name: "fanta", price: 5.00},
+  {name: "dr-pepper", price: 5.00}
+]
+function Pizza(size, toppings, sides, drinks) {
   this.size = size;
   this.toppings = toppings;
   this.sides = sides;
+  this.drinks = drinks;
 };
 Pizza.prototype.getCost = function() {
   let cost = 0;
@@ -45,6 +52,12 @@ Pizza.prototype.getCost = function() {
       cost = cost + SIDES[i].price;
     }
   }
+  for (let i = 0; i < DRINKS.length; i++) {
+    const currentSide = DRINKS[i].name.toLowerCase();
+    if (this.drinks.includes(currentSide)) {
+      cost = cost + DRINKS[i].price;
+    }
+  }
   return cost; 
 }
 
@@ -62,8 +75,13 @@ $(document).ready(function() {
           const lowerCaseVal = $(this).val().toLowerCase();
           sides.push(lowerCaseVal);
       });
+      const drinks = [];
+      $('input[name="drinks[]"]:checkbox:checked').each(function(_i) {
+          const lowerCaseVal = $(this).val().toLowerCase();
+          drinks.push(lowerCaseVal);
+      });
 
-      const pizza = new Pizza(size, toppings, sides);
+      const pizza = new Pizza(size, toppings, sides, drinks);
 
       $('#total').html('$' + pizza.getCost().toFixed(2));
   })
