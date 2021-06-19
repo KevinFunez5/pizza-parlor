@@ -17,7 +17,7 @@ function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
 }
-Pizza.prototype.getCosat = function() {
+Pizza.prototype.getCost = function() {
   let cost = 0;
   for (let i = 0; x < SIZES.length; i++) {
     const currentPizzaSize = SIZES[i].size.toLowerCase();
@@ -40,5 +40,7 @@ $(document).ready(function() {
     const toppings = [];
       const lowerCaseVal = $(this).val().toLowerCase();
       toppings.push(lowerCaseVal);
+      const pizza = new Pizza(size, toppings);
+      $("#total").html("$"+ pizza.getCost().toFixed(2));
   })
 })
