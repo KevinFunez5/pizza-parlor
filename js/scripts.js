@@ -13,11 +13,18 @@ const TOPPINGS = [
   { name: "peppers", price: 1.00},
   { name: "bacon", price: 1.00},
   { name: "pineapple", price: 1.00}
-]
-function Pizza(size, toppings) {
+];
+const SIDES = [
+  {name: "wings", price: 5.00},
+  {name: "garlic-bread", price: 8.00},
+  {name: "salad", price: 10.00},
+  {name: "chocolate-cake", price: 10.00}
+];
+function Pizza(size, toppings, sides) {
   this.size = size;
   this.toppings = toppings;
-}
+  this.sides = sides;
+};
 Pizza.prototype.getCost = function() {
   let cost = 0;
   for (let i = 0; i < SIZES.length; i++) {
@@ -32,6 +39,12 @@ Pizza.prototype.getCost = function() {
       cost = cost + TOPPINGS[i].price;
     }
   }
+  for (let i = 0; i < SIDES.length; i++) {
+    const currentSide = SIDES[i].name.toLowerCase();
+    if (this.sides.includes(currentSide)) {
+      cost = cost + SIDES[i].price;
+    }
+  }
   return cost; 
 }
 
@@ -40,12 +53,17 @@ $(document).ready(function() {
       const size = $('#size').val();
 
       const toppings = [];
-      $('input[name="toppings[]"]:checkbox:checked').each(function(i) {
+      $('input[name="toppings[]"]:checkbox:checked').each(function(_i) {
           const lowerCaseVal = $(this).val().toLowerCase();
           toppings.push(lowerCaseVal);
       });
+      const sides = [];
+      $('input[name="sides[]"]:checkbox:checked').each(function(_i) {
+          const lowerCaseVal = $(this).val().toLowerCase();
+          sides.push(lowerCaseVal);
+      });
 
-      const pizza = new Pizza(size, toppings);
+      const pizza = new Pizza(size, toppings, sides);
 
       $('#total').html('$' + pizza.getCost().toFixed(2));
   })
