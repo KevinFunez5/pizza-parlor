@@ -26,4 +26,10 @@ Pizza.prototype.getCosat = function() {
 
     }
   }
-}
+  for (let i = 0; i < TOPPINGS.length; i++) {
+    const currentTopping = TOPPINGS[i].name.toLowerCase();
+    if (this.toppings.includes(currentTopping)) {
+      cost = cost + TOPPINGS[i].price;
+    }
+  }
+} return cost; 
