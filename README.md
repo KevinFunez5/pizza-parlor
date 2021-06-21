@@ -33,7 +33,7 @@ _This application will let a user choose what sixe and what toppings they want o
 
 This software is licensed under the MIT license.
 
-Copyright © 2021 Dave Lindqvist
+Copyright © 2021 Kevin Funez
 
 
 ## Contact Information
