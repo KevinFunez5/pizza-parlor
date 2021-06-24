@@ -55,6 +55,7 @@ _Kevin Funez (kevin.funez315@gmail.com)
 > Test: "It should return an array if user choses pepperoni"
 > Code:Toppinga(pepperoni);
 > Expected Output: [1.00]
+
 > Test: "It should return an array if user choses jalapenos"
 > Code:Toppings(jalapenos);
 > Expected Output: [1.00]
